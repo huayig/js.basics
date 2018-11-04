@@ -903,3 +903,117 @@
 //     .map(obj => obj.value);
 
 // console.log(items);
+
+// const numbers = [1, -1, 2, 3];
+
+// // a = 0, c = 1 => a = 1
+// // a = 1, c = -1 => a = 0
+// // a = 0, c = 2 => a = 2
+// // a = 2, c = 3 => a = 5
+
+// // a = 1, c = -1 => a = 0
+// // a = 0, c = 2 => a = 2
+// // a = 2, c = 3 => a = 5
+
+// const sum = numbers.reduce(
+//     (accumulator, currentValue) => accumulator + currentValue
+//     );
+
+// console.log(sum);
+
+//Exercise 1
+
+// const numbers = arraysFromRange(-10, -4);
+
+// console.log(numbers);
+
+// function arraysFromRange(min, max) {
+//     let numbers = [];
+//     for (let i = min; i <= max; i++)
+//     numbers += i;
+//     return numbers;
+// }
+
+// function arraysFromRange(min, max) {
+//     const output = [];
+//     for (let i = min; i <= max; i++)
+//     output.push(i);
+//     return output;
+// }
+
+// // Exercise 2
+
+// const numbers = [1, 2, 3, 4];
+
+// console.log(numbers.includes(4));
+
+// function includes(array, searchElement) {
+//     for (let i = 0; i <= array.length; i++)
+//         return array.shift() === searchElement;
+// }
+
+// function includes(array, searchElement) {
+//     for (let element of array)
+//         if (element === searcthElement)
+//             return true;
+//     return false;
+// }
+
+// Exercise 3
+
+// const numbers = [1, 2, 3, 4, 5, 1];
+
+// const output = except(numbers, [1]);
+
+// console.log(output);
+
+// function except(array, excluded) {
+//     let output = array;
+//     for (let element of array)
+//         // console.log(element);
+//         // console.log(excluded);
+//         if (element == excluded)
+//             output.splice(output.indexOf(element), 1);
+//     return output;
+// }
+
+// function except(array, excluded) {
+//     const output = [];
+//     for (let element of array)
+//         if (!excluded.includes(element))
+//             output.push(element);
+//     return output;
+
+// Exercise 4
+
+// const numbers = [1, 2, 3, 4];
+
+// const output = move(numbers, 1, -2);
+
+// console.log(output);
+
+// function move(array, index, offset) {
+//     let output = array;
+//     let position = index + offset;
+//     let digit = array[index];
+//     if (position < array.length & position >= 0) {
+//         output.splice(index, 1);
+//         output.splice(position, 0, digit);
+//         return output;
+//     } 
+//     console.error('Invalid offset');
+// }
+
+// function move(array, index, offset) {
+//     const position = index + offset;
+//     if (position >= array.length || position < 0) {
+//         console.error('Invalid offset');
+//         return;
+//     }
+//     const output = [...array];
+//     const element = output.splice(index, 1)[0];
+//     output.splice(index + offset, 0, element);
+//     return output;
+// }
+
+// Exercise 5
