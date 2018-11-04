@@ -1083,24 +1083,288 @@
 //     return array.reduce((a, b) => (a > b) ? a : b);
 // }
 
-//Exercise 7
+// //Exercise 7
 
-const movies = [
-    { title: 'a', year: 2018, rating: 4.5 },
-    { title: 'b', year: 2018, rating: 4.7 },
-    { title: 'c', year: 2018, rating: 3 },
-    { title: 'd', year: 2017, rating: 4.5 },
-]
+// const movies = [
+//     { title: 'a', year: 2018, rating: 4.5 },
+//     { title: 'b', year: 2018, rating: 4.7 },
+//     { title: 'c', year: 2018, rating: 3 },
+//     { title: 'd', year: 2017, rating: 4.5 },
+// ]
 
-// All the movies in 2018 with rating > 4
-// Sort them by their rating
-// Descending order
-// Pick their title
+// // All the movies in 2018 with rating > 4
+// // Sort them by their rating
+// // Descending order
+// // Pick their title
 
-const goodMovies = movies
-    .filter( m => m.year > 2017 && m.rating > 4)
-    .sort( (a, b) => a.rating - b.rating)
-    .reverse()
-    .map(m => m.title)
+// const goodMovies = movies
+//     .filter( m => m.year > 2017 && m.rating > 4)
+//     .sort( (a, b) => a.rating - b.rating)
+//     .reverse()
+//     .map(m => m.title)
+
+// console.log(goodMovies);
+
+// // Function Declaration
+// walk();
+
+// function walk() {
+//     console.log('walk');
+// }
+
+// // Function Expression
+// let run = function() {
+//     console.log('run')
+// };
+
+// run();
+
+// // Arguments
+
+// function sum() {
+//     let total = 0;
+//     for (let value of arguments)
+//         total += value;
+//     return total;
+// }
+
+// console.log(sum(1,2,3,4,5,6,10));
+
+// // Rest Operator
+
+// function sum(discount, ...prices) {
+//     const total = prices.reduce((a,b) => a + b);
+//     return total * (1 - discount);
+// } 
+
+// console.log(sum(0.1, 20, 30, 40));
+
+// // Default parameters
+
+// function interest(principal, rate = 3.5, years = 5) {
+//     return principal * rate / 100 * years;
+// }
+
+// console.log(interest(10000));
+
+// // Getters and Setters
+
+// const person = {
+//     firstName: 'Huayi',
+//     lastName: 'Gao',
+//     get fullName() {
+//         return `${person.firstName} ${person.lastName}`
+//     },
+//     set fullName(value) {
+//         const parts = value.split(' ');
+//         this.firstName = parts[0];
+//         this.lastName = parts[1];
+//     }
+// }
+
+// person.fullName = 'John Smith';
+
+// console.log(person);
+
+// Try and Catch
+
+// const person = {
+//     firstName: 'Huayi',
+//     lastName: 'Gao',
+//     get fullName() {
+//         return `${person.firstName} ${person.lastName}`
+//     },
+//     set fullName(value) {
+//         if (typeof value !== 'string')
+//             throw new Error ('Value is not a string.');
     
-console.log(goodMovies);
+//         const parts = value.split('');
+//         if (parts.length !== 2)
+//             throw new Error ('Enter a first and last name.')
+        
+//         this.firstName = parts[0];
+//         this.lastName = parts[1];
+//     }
+// };
+
+// try {
+//     person.fullName = '';
+// }
+
+// catch (e) {
+//     alert(e);
+// }
+
+// Local vs Global Scope
+
+// const color = 'red';
+
+// function start() {
+//     const message = 'hi';
+//     const color = 'blue';
+//     console.log(color);
+// }
+
+// function stop() {
+//     const message = 'bye'
+// }
+
+// start();
+
+// Let vs Var
+
+// function start() {
+//     for (var i = 0; i < 5; i++) {
+//         if (true) {
+//             let color = 'red';
+//         }
+//     }
+//     console.log(i);
+//     console.log(color);
+// }
+
+// // var => function-scoped
+// // ES6 (ES2015): let, const => block-scoped
+
+// start();
+
+// var color = 'red';
+// let age = 30;
+
+// function sayHi() {
+//     console.log('hi');
+// }
+
+// // The this Keyword
+
+// const video = {
+//     title: 'a',
+//     tags: ['a', 'b', 'c'],
+//     showTags() {
+//         this.tags.forEach(function(tag) {
+//             console.log(this.title, tag);
+//         }, this);
+//     }
+// };
+
+// video.showTags();
+
+// function Video(title) {
+//     this.title = title;
+//     console.log(this);
+// }
+
+// const v = new Video('b');
+
+// Solutino with that
+// const video = {
+//     title: 'a',
+//     tags: ['a', 'b', 'c'],
+//     showTags() {
+//         const that = this;
+//         this.tags.forEach(function(tag) {
+//             console.log(that.title, tag);
+//         });
+//     }
+// };
+
+// video.showTags();
+
+// Solution with call and apply and bind methods
+// function playVideo(a,b) {
+//     console.log(this);
+// }
+
+// playVideo.call( { name: 'Huayi'}, 1, 2);
+// playVideo.apply( { name: 'Huayi'}, [1, 2]);
+// playVideo.bind( { name: 'Huayi'})();
+
+// playVideo();
+
+// // Solution with bind method
+// const video = {
+//     title: 'a',
+//     tags: ['a', 'b', 'c'],
+//     showTags() {
+//         this.tags.forEach(function(tag) {
+//             console.log(this.title, tag);
+//         }.bind(this));
+//     }
+// };
+
+// // Solution with arrow function
+// const video = {
+//     title: 'a',
+//     tags: ['a', 'b', 'c'],
+//     showTags() {
+//         this.tags.forEach(tag => {
+//             console.log(this.title, tag);
+//         });
+//     }
+// };
+
+// video.showTags();
+
+// Exercise 1
+// sum(1,2,3,4) =>10
+
+// sum([1, 2, 3, 4, 5]);
+
+// function sum(...array) {
+//     let total = 0;
+//     if (Array.isArray(array) === true)
+//         console.log('sum is array');
+//         const sum = array.reduce((a,b) => a + b);
+//         console.log('sum is calculated to be', sum);
+// }
+
+// console.log(sum([1,2,3,4]));
+
+// function sum(...items) {
+//     if (items.length === 1 && Array.isArray(items[0]))
+//         items = [...items[0]];
+//     return items.reduce((a,b) => a+b);
+// }
+
+// // Exercise 2
+
+// // circle.radius = 2;
+// // console.log(circle.area);
+
+// const circle = {
+//     radius: 2,
+//     get area() {
+//         return Math.PI * this.radius * this.radius;
+//     }
+// };
+
+// console.log(circle.area);
+
+// // const circle = {
+// //     radius: 1,
+// //     get area() {
+// //         return Math.PI * this.radius * this.radius;
+// //     }
+// // }
+
+// console.log(circle.area);
+
+// try {
+//     const numbers = [1, 2, 3, 4, 1, 1, 1, 1];
+//     const count = countOccurrences('numbers', 1);
+//     console.log(count);
+// }
+
+// catch(e) {
+//     console.error(e);
+// }
+
+// function countOccurrences(array, searchElement) {
+//     // if (Array.isArray(array) !== true)
+//     if (!Array.isArray(array))
+//         throw new Error ('Input must be an array');
+//     return array.reduce((accumulator, current) => {
+//         const occurrence = (current === searchElement) ? 1 : 0;
+//         return accumulator + occurrence;
+//     }, 0);
+// }
