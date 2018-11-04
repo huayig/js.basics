@@ -747,3 +747,159 @@
 // ];
 
 // console.log(priceRange);
+
+// // Arrays
+
+// const numbers = [3, 4];
+
+// // End
+// numbers.push(5, 6);
+
+// // Beginning
+// numbers.unshift(1,2);
+
+// // Middle
+// numbers.splice(2, 0, 'a', 'b');
+
+// console.log(numbers);
+
+// const numbers = [1, 2, 3, 1, 4];
+// console.log(numbers.indexOf(1, 2));
+// console.log(numbers.lastIndexOf(1));
+
+// console.log(numbers.indexOf(1) !== -1);
+// console.log(numbers.includes(1));
+
+// const courses = [
+//     {id: 1, name: 'a'},
+//     {id: 1, name: 'b'},
+// ];
+
+// const course = courses.find(function(course) {
+//     return course.name === 'a';
+// });
+
+// const course = courses.find(course => course.name === 'a');
+
+// console.log(course);
+
+// const numbers = [1, 2, 3, 4];
+
+// //End
+// const last = numbers.pop();
+
+// //Beginning
+// const first = numbers.shift();
+
+// //Middle
+// const middle = numbers.splice(2, 2);
+
+// let numbers = [1, 2, 3, 4];
+// let another = numbers;
+// // // Solution 1
+// // numbers = [];
+
+// // // Solution 2
+// // numbers.length = 0;
+
+// // // Solution 3
+// // numbers.splice(0, numbers.length);
+
+// // // Solution 4
+// // while (numbers.length > 0)
+// // numbers.pop();
+
+// console.log(numbers);
+// console.log(another);
+
+// const first = [{ id: 1 }];
+// const second = [4, 5, 6];
+
+// const combined = first.concat(second);
+// first[0].id = 10;
+
+// const slice = combined.slice(2, 3);
+
+// console.log(combined);
+// console.log(slice);
+
+// const first = [1, 2, 3];
+// const second = [4, 5, 6];
+
+// // Spread operator
+// const combined = [...first, 'a', ...second, 'b'];
+
+// const copy = [...combined];
+
+
+// // Iterating arrays
+// const numbers = [1, 2, 3];
+
+// for (let number of numbers)
+//     console.log(number);
+
+// numbers.forEach((number, index) => console.log(index, number));
+
+// // Joining arrays
+// const numbers = [1, 2, 3];
+// const joined = numbers.join(',');
+
+// console.log(joined);
+
+// const message = 'This is my first message';
+// const parts = message.split(' ');
+// console.log(parts);
+
+// console.log(parts.join('-'));
+
+// // Sorting arrays
+// const numbers = [2, 3, 1];
+// numbers.sort();
+// numbers.reverse();
+
+// console.log(numbers);
+
+// const courses = [
+//     { id: 1, name: 'Node.js'},
+//     { id: 2, name: 'javascript'},
+// ];
+
+// courses.sort((a,b) => {
+//     // a < b => -1
+//     // a > b => 1
+//     // a === b => 0
+//     const nameA = a.name.toUpperCase();
+//     const nameB = b.name.toUpperCase();
+
+//     if (nameA < nameB) return -1;
+//     if (nameA > nameB) return 1;
+//     return 0;
+// });
+
+// console.log(courses);
+
+// const numbers = [1, -1, 2, 3];
+
+// // every()
+// // some()
+
+// const allPositive = numbers.every((value) => {
+//     return value >= 0;
+// })
+
+// const atLeastOnePositive = numbers.some((value) => {
+//     return value >= 0;
+// })
+
+// console.log(atLeastOnePositive);
+
+// // Filter arrays
+// const numbers = [1, -1, 2, 3];
+
+// const items = numbers
+//     .filter(n => n >= 0)
+//     .map(n => ({ value: n}))
+//     .filter(obj => obj.value > 1)
+//     .map(obj => obj.value);
+
+// console.log(items);
