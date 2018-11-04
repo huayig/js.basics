@@ -489,3 +489,261 @@
 //             return false;
 //     return true;
 // }
+
+// Object-oriented Programming (OOP)
+
+// Camel Notation: oneTwoThreeFour
+// Fascal Notation: OneTwoThreFour
+
+// Factory Function
+
+// Constructor literals
+// new String(); // '', "", ``
+// new Boolean(); // true, false
+// new Number(); //1, 2, 3, etc.
+
+// function createCircle(radius) {
+//     return {
+//         radius,
+//         draw(){
+//             console.log('draw');
+//         }
+//     };
+// }
+
+// const circle = createCircle(1);
+
+// // Constructor Function
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.draw = function() {
+//         console.log('draw');
+//     }
+// }
+
+// const Circle1 = new Function('radius', `
+// this.radius = radius;
+// this.draw = function() {
+//     console.log('draw');
+// }
+// `);
+
+// const circle = new Circle1(1);
+
+// Circle.call ({}, 1, 2);
+// Circle.appy ({}, [1, 2, 3]);
+
+// const another = new Circle(1);
+
+// // Value vs Reference Types
+// let x = {value:10};
+// let y = x;
+
+// x.value = 20;
+
+// Primitives are copied by their value
+// Objects are copied by their reference
+
+// let obj = {value: 10};
+// function increase(obj){
+//     obj.value++
+// }
+// increase(obj);
+// console.log(obj);
+
+// const circle = {
+//     radius:1,
+//     draw() {
+//         console.log('draw');
+//     }
+// }
+
+// for (let key in circle)
+//     console.log(key, circle[key]);
+
+// for (let key of Object.keys(circle))
+//     console.log(key);
+    
+// for (let entry of Object.entries(circle))
+// console.log(entry);
+
+// if ('radius' in circle) console.log('yes');
+
+
+// const circle = {
+//     radius:1,
+//     draw() {
+//         console.log('draw');
+//     }
+// }
+
+// // const another = {};
+// // for (let key in circle)
+// //     another[key] = circle[key];
+
+// // const another = Object.assign({},circle);
+
+// const another = { ...circle }; // Spread operator to spread properties and methods into the object
+
+// console.log(another)
+
+// Math Object: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
+
+// // String primitive
+// const message = 'This is my first message';
+
+// // String object
+// const another = new String('hi');
+
+// String Object: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+// Object {}
+// Template ``
+
+// const name = 'Mosh';
+
+// const another = 
+// `Hi ${name},
+
+// It's great to meet you!
+
+// Best,
+// Huayi`;
+
+// Date Object: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+// const now = new Date();
+// const date1 = new Date('May 11 2018 09:00');
+// const date2 = new Date(2018, 4, 11, 9);
+
+// now.setFullYear(2017);
+// now.toDateString()
+// now.toTimeString()
+// now.toISOString()
+
+//Exercise 1
+// street
+// city
+// zipcode
+
+// const address = {
+//     street: '151 Charles Street West',
+//     city: 'Kitchener',
+//     zipcode: 'N2G1H6'
+// };
+
+// function showAddress(address) {
+//     for (let key in address)
+//         console.log(key, address[key]);
+// }
+
+// showAddress(address)
+
+// // Exercise 2
+// // Factory Function
+// function createAddress(street, city, zipCode) {
+//     return {
+//     street,
+//     city,
+//     zipCode
+//     }
+// }
+
+// let address1 = createAddress ('a', 'b', 'c');
+
+// // Constructor Function
+// function CreateAddress(street, city, zipCode) {
+//     this.street = street;
+//     this.city = city;
+//     this.zipcode = zipCode;
+// }
+
+// const address2 = new CreateAddress('a', 'b', 'c');
+
+// // Exercise 3
+// let address1 = new Address('a', 'b', 'c');
+// let address2 = new Address('a', 'b', 'c');
+// let address3 = address1;
+
+// console.log(areEqual(address1, address2));
+// console.log(areSame(address1, address2));
+// console.log(areSame(address1, address3));
+
+// // Constructor Function
+// function Address(street, city, zipCode) {
+//     this.street = street;
+//     this.city = city;
+//     this.zipCode = zipCode;
+// }
+
+// function areEqual(address1, address2) {
+//     return address1.street === address2.street &&
+//     address1.city === address2.city &&
+//     address1.zipCode === address2.zipCode;
+// }
+
+// function areSame(address1, address2) {
+//     return address1 === address2;
+// }
+
+// Exercise 4
+// title
+// body
+// author
+// views
+// comments
+//  (author, body)
+// isLive
+
+// const post = {
+//     title: 'Gone with the wind',
+//     body: 'blah',
+//     author: 'Ma sister',
+//     views: 100,
+//     comments: [
+//         {author: 'John', body: 'Nice!'}, 
+//         {author: 'Dave', body: 'Great!'},
+//     ],
+//     isLive: true
+// }
+
+// let post = new Post('a', 'b', 'c');
+
+// console.log(post);
+
+// function Post(title, body, author) {
+//     this.title = title;
+//     this.body = body;
+//     this.author = author;
+//     this.views = 0;
+//     this.comments = [];
+//     this.isLive = false;
+// } 
+
+// // Exercise 6 price range objects on Yelp
+
+// let priceRange = [
+//     {
+//         label: '$',
+//         tooltip: 'Inexpensive',
+//         minPerPerson: 0,
+//         MaxPerPerson: 10
+//     },
+//     {
+//         label: '$$',
+//         tooltip: 'Moderate',
+//         minPerPerson: 11,
+//         MaxPerPerson: 20
+//     },
+//     {
+//         label: '$$$',
+//         tooltip: 'Expensive',
+//         minPerPerson: 21,
+//         MaxPerPerson: 50
+//     }
+// ];
+
+// let restaurants = [
+//     { averagePerPerson: 5 }
+// ];
+
+// console.log(priceRange);
