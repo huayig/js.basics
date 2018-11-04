@@ -1016,4 +1016,91 @@
 //     return output;
 // }
 
-// Exercise 5
+// // Exercise 5
+
+// const numbers = [1, 2, 3, 4, 1, 1, 1, 1];
+
+// const count = countOccurrences(numbers, 1);
+
+// console.log(count);
+
+// function countOccurrences(array, searchElement) {
+//     let count = 0;
+//     for (let element of array)
+//         if (element === searchElement)
+//             count++;
+//     return count;
+// }
+
+// function countOccurrences(array, searchElement) {
+//     return array.reduce((accumulator, currentValue) => {
+//         if (currentValue === searchElement)
+//             accumulator++;
+//         return accumulator; 
+//     }, 0)
+// }   
+
+// function countOccurrences(array, searchElement) {
+//     return array.reduce((accumulator, current) => {
+//         const occurrence = (current === searchElement) ? 1 : 0;
+//         return accumulator + occurrence;
+//     }, 0);
+// }
+
+// const numbers = [1, 2, 3, 4];
+
+// const max = getMax(numbers);
+
+// console.log(max);
+
+// function getMax(array) {
+//     if (array.length === 0 ) return undefined;
+//     let max = 0;
+//     for (let value of array)
+//         if (value > max)
+//             max = value;
+//     return max;
+// }
+
+// function getMax(array) {
+//     return array.reduce((accumulator, current) => {
+//         const max = (accumulator > current)? accumulator : current;
+//         return max;
+//     }, 0)
+// }
+
+// function getMax(array) {
+//     if (array.length === 0 ) return undefined;
+//     let max = array[0];
+//     for (let i = 1; i < array.length; i++)
+//         if (array[i] > max)
+//             max = array[i];
+//     return max;
+// }
+
+// function getMax(array) {
+//     if (array.length === 0) return undefined;
+//     return array.reduce((a, b) => (a > b) ? a : b);
+// }
+
+//Exercise 7
+
+const movies = [
+    { title: 'a', year: 2018, rating: 4.5 },
+    { title: 'b', year: 2018, rating: 4.7 },
+    { title: 'c', year: 2018, rating: 3 },
+    { title: 'd', year: 2017, rating: 4.5 },
+]
+
+// All the movies in 2018 with rating > 4
+// Sort them by their rating
+// Descending order
+// Pick their title
+
+const goodMovies = movies
+    .filter( m => m.year > 2017 && m.rating > 4)
+    .sort( (a, b) => a.rating - b.rating)
+    .reverse()
+    .map(m => m.title)
+    
+console.log(goodMovies);
